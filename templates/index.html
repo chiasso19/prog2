@@ -10,14 +10,82 @@
 </head> -->
 <body>
 {% include "navbar.html" %}
-    <main>
-        <div class="container">
-        <h1>Habit Tracker von Chiara</h1>
-        <h2>Welche Habits möchtest du tracken?</h2>
-        <p>Du hast folgende Auswahl:</p>
-        </div>
+<div class="container"><br>
+    <h1>Trage deine Habits ein!</h1>
+        <p>Welche Habits hast du heute gemacht?</p>
+</div>
+<form method="POST" class="m-5">
+    <h6>Sport</h6>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Workout</label>
+        <input type="workout" class="form-control, m-20" id="exampleFormControlInput1" placeholder="Bsp. 20min">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Go for a walk</label>
+        <input type="walk" class="form-control, m-20" id="exampleFormControlInput1" placeholder="Bsp. 20min">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Stretching</label>
+        <input type="stretching" class="form-control, m-20" id="exampleFormControlInput1" placeholder="Bsp. 20min">
+    </div>
 
-    </main>
+    <h6>Haushalt</h6>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">Vacuum</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">Tidy</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">Make bed</label>
+    </div><br>
+
+    <h6>Nahrung</h6>
+    <h8>Veggies/Fruits</h8>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Viel</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Mittel</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Wenig</label>
+    </div>
+    <h8>Sweets</h8>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Viel</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Mittel</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Wenig</label>
+    </div>
+    <h8>Alcohol</h8>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Viel</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Mittel</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">Wenig</label>
+    </div><br>
+    <button type="button" class="btn btn-success">Speichern</button>
+</form>
+
 
 {% include "footer.html" %}
 
