@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+import daten
 
 app = Flask(__name__)
 
@@ -17,36 +18,32 @@ def index():
         sweets = request.form.get("sweets")
         alcohol = request.form.get("alcohol")
 
-        li = [workout, walk, stretching, vacuum, tidy, bed, veggie, sweets, alcohol]
-        return render_template("test.html", listeA=li)   #f"<H1>{workout}, {walk}</H1>"
-    else:
-        return render_template('index.html')
+        habits = {
+            "Sport": [
+                {
+                    "Workout": workout,
+                    "Walk": walk,
+                    "Stretching": stretching
+                }],
+            "Haushalt": [
+                {"Vacuum": vacuum,
+                 "Tidy": tidy,
+                 "Bed": bed
+                 }],
+            "Nahrung": [
+                {"Veggies": veggie,
+                 "Sweets": sweets,
+                 "Alcohol": alcohol
+                 }]
+        }
 
-@ app.route("/statistik")
+        habits = daten.habit_speichern(habits)
+    return render_template('index.html')
+
+@app.route("/statistik")
 def statistik():
     return render_template('statistik.html')
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
 
-
-"""
-dict_habits = {
-    "sport":[
-        {
-            "workout":20,
-            "walk":20,
-            "stretching":20
-        }],
-    "haushalt":[
-        {"Vacuum": true,
-         "tidy": true,
-         "make_bed": true
-         }],
-    "nahrung":[
-        { viel mittel wenig?????
-
-        }]
-
-}
-"""

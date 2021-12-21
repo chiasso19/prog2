@@ -1,0 +1,94 @@
+{
+  "2021-12-21 19:24:24.825367": {
+    "Sport": [
+      {
+        "Workout": "1",
+        "Walk": "1",
+        "Stretching": "1"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": "on",
+        "Tidy": "on",
+        "Bed": "on"
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": "mittel",
+        "Alcohol": "wenig"
+      }
+    ]
+  },
+  "2021-12-21 19:25:34.945591": {
+    "Sport": [
+      {
+        "Workout": "20",
+        "Walk": "20",
+        "Stretching": "20"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": "on",
+        "Tidy": null,
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "wenig",
+        "Sweets": "mittel",
+        "Alcohol": "viel"
+      }
+    ]
+  },
+  "2021-12-21 19:34:51.528194": {
+    "Sport": [
+      {
+        "Workout": "30",
+        "Walk": "30",
+        "Stretching": "30"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": "on",
+        "Tidy": null,
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": "viel",
+        "Alcohol": "viel"
+      }
+    ]
+  },
+  "2021-12-21 19:36:15.709151": {
+    "Sport": [
+      {
+        "Workout": "40",
+        "Walk": "40",
+        "Stretching": "40"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": null,
+        "Tidy": "on",
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": null,
+        "Alcohol": null
+      }
+    ]
+  }
+}
