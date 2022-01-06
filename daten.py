@@ -1,4 +1,3 @@
-from datetime import datetime
 import json
 
 
@@ -11,17 +10,14 @@ def speichern(datei, key, value):
 
     datei_inhalt[str(key)] = value
 
-    # print(datei_inhalt)
-
     with open('habits.json', "w") as open_file:
         json.dump(datei_inhalt, open_file, indent=2)
 
 
-def habit_speichern(habits):
+def habit_speichern(datum, dicthabits):
     datei_name = "habits.json"
-    zeitpunkt = datetime.now()
-    speichern(datei_name, zeitpunkt, habits)
-    return zeitpunkt, habits
+    speichern(datei_name, datum, dicthabits)
+    return datum, dicthabits
 
 
 def habits_laden():
