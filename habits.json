@@ -182,5 +182,120 @@
         "Alcohol": null
       }
     ]
+  },
+  "14.01.2022": {
+    "Sport": [
+      {
+        "Workout": "60",
+        "Walk": "60",
+        "Stretching": "60"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": "on",
+        "Tidy": null,
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": "wenig",
+        "Alcohol": "wenig"
+      }
+    ]
+  },
+  "10.01.2022": {
+    "Sport": [
+      {
+        "Workout": "100",
+        "Walk": "20",
+        "Stretching": "20"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": null,
+        "Tidy": null,
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": "wenig",
+        "Alcohol": "wenig"
+      }
+    ]
+  },
+  "11.01.2022": {
+    "Sport": [
+      {
+        "Workout": "15",
+        "Walk": "30",
+        "Stretching": "80"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": null,
+        "Tidy": null,
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": null,
+        "Alcohol": null
+      }
+    ]
+  },
+  "13.01.2022": {
+    "Sport": [
+      {
+        "Workout": "80",
+        "Walk": "80",
+        "Stretching": "80"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": null,
+        "Tidy": "on",
+        "Bed": null
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "viel",
+        "Sweets": null,
+        "Alcohol": null
+      }
+    ]
+  },
+  "12.01.2022": {
+    "Sport": [
+      {
+        "Workout": "80",
+        "Walk": "80",
+        "Stretching": "80"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": null,
+        "Tidy": null,
+        "Bed": "on"
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": null,
+        "Sweets": "mittel",
+        "Alcohol": "mittel"
+      }
+    ]
   }
 }

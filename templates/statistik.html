@@ -4,21 +4,24 @@
 
 <div class="container"><br>
   <h1 >So sieht deine bisherige Statisktik aus!</h1>
+  <p>Du hast deine Habits {{anzahlhabits}}x mal getrackt.</p>
     <h3>Insgesamt:</h3>
-    <p>{{satz_workoutgesamt}}</p>
-  <p>{{satz_walkgesamt}}</p>
-  <p>{{satz_stretchinggesamt}}</p>
-  <p>{{satz_vacuumgesamt}}</p>
-  <p>{{satz_tidygesamt}}</p>
-  <p>{{satz_bedgesamt}}</p>
-  <p>{{satz_veggiegesamt}}</p>
-  <p>{{satz_sweetsgesamt}}</p>
-  <p>{{satz_alcoholgesamt}}</p>
-    <h4>Diesen Monat:</h4>
+    <p>Du hast {{workoutgesamt}} Minuten Workout gemacht.</p>
+    <p>Du bist {{walkgesamt}} Minuten glaufen.</p>
+    <p>Du hast {{stretchinggesamt}} Minuten Stretching gemacht.</p>
+    <p>Du hast {{vacuumgesamt}} Mal gestaubsaugt.</p>
+    <p>Du hast {{tidygesamt}} Mal aufgeräumt.</p>
+    <p>Du hast {{bedgesamt}} Mal dein Bett gemacht.</p>
+    <p>Du hast {{veggiegesamt}} Mal Gemüse gegessen.</p>
+    <p>Du hast {{sweetsgesamt}} Mal Süsses gegessen.</p>
+    <p>Du hast {{alcoholgesamt}} Mal Alkohol getrunken.</p><br>
+    <h4>Diesen Monat:</h4><br>
 
     <h4 >Vergleiche:</h4>
+    <p>Du hast {{"%.2f"|format(vergvegsweet)}}x mehr Gemüse gegessen als Süsses.</p>
+    <p>Du hast {{"%.2f"|format(vergvegalc)}}x mehr Gemüse als Alkohol getrunken.</p>
+    <p>Du hast {{"%.2f"|format(vergalcsweet)}}x mehr Süsses gegessen als Alkohol getrunken.</p>
 
-    <p>Du hast deine Habits x mal getrackt.</p>
 </div>
 
 {% include "footer.html" %}
