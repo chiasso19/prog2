@@ -297,5 +297,28 @@
         "Alcohol": "mittel"
       }
     ]
+  },
+  "17.01.2022": {
+    "Sport": [
+      {
+        "Workout": "60",
+        "Walk": "5",
+        "Stretching": "10"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": null,
+        "Tidy": null,
+        "Bed": "on"
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "mittel",
+        "Sweets": "viel",
+        "Alcohol": "viel"
+      }
+    ]
   }
 }

@@ -29,14 +29,16 @@ def index():
                     "Stretching": stretching
                 }],
             "Haushalt": [
-                {"Vacuum": vacuum,
-                 "Tidy": tidy,
-                 "Bed": bed
+                {
+                    "Vacuum": vacuum,
+                    "Tidy": tidy,
+                    "Bed": bed
                  }],
             "Nahrung": [
-                {"Veggies": veggie,
-                 "Sweets": sweets,
-                 "Alcohol": alcohol
+                {
+                    "Veggies": veggie,
+                    "Sweets": sweets,
+                    "Alcohol": alcohol
                  }]
         }
         daten.habit_speichern(datum, dicthabits)
@@ -57,14 +59,21 @@ def statistik():
     sweetsgesamt = 0
     alcoholgesamt = 0
 
-    veggieverg = 0 #Vergleich
-    sweetsverg = 0  # Vergleich
-    alcoholverg = 0  # Vergleich
+    veggieverg = 0 #Vergleichzähler
+    sweetsverg = 0  # Vergleichzähler
+    alcoholverg = 0  # Vergleichzähler
 
     anzahlhabits = 0 #wie viel Mal wurde getrackt
 
+    monatworkoutgesamt = 0
+
 
     for key, alles in datenhabits.items():
+        monat = key.split(".")[1]
+        if monat == "01":
+            if alles["Sport"][0]["Workout"] != "":
+                monatworkoutgesamt = monatworkoutgesamt + int(alles["Sport"][0]["Workout"])
+
         if alles["Sport"][0]["Workout"] != "":
             workoutgesamt= workoutgesamt + int(alles["Sport"][0]["Workout"])
         if alles["Sport"][0]["Walk"] != "":
@@ -113,14 +122,12 @@ def statistik():
         vergvegalc = veggieverg / alcoholverg
         vergalcsweet = alcoholverg / sweetsverg
 
-        #monat = str(alles()).split(".")[1]
-
 
     return render_template('statistik.html', workoutgesamt=workoutgesamt, walkgesamt=walkgesamt,
                            stretchinggesamt=stretchinggesamt, vacuumgesamt=vacuumgesamt,tidygesamt=tidygesamt,
                            bedgesamt=bedgesamt, veggiegesamt=veggiegesamt,sweetsgesamt=sweetsgesamt,
                            alcoholgesamt=alcoholgesamt, vergvegsweet=vergvegsweet, vergvegalc=vergvegalc, vergalcsweet=vergalcsweet,
-                           anzahlhabits=anzahlhabits, monat=monat)
+                           anzahlhabits=anzahlhabits, monatworkoutgesamt=monatworkoutgesamt)
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
 
