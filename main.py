@@ -46,9 +46,11 @@ def index():
     return render_template('index.html')
 
 
-@app.route("/statistik", methods=['GET'])
+@app.route("/statistik", methods=["POST", "GET"])
 def statistik():
-    datenhabits = daten.habits_laden()
+    datenhabits = daten.habits_laden() #lädt Daten aus daten.py
+
+    #zähler insgesamt
     workoutgesamt = 0
     walkgesamt = 0
     stretchinggesamt = 0
@@ -59,23 +61,27 @@ def statistik():
     sweetsgesamt = 0
     alcoholgesamt = 0
 
-    veggieverg = 0 #Vergleichzähler
-    sweetsverg = 0  # Vergleichzähler
-    alcoholverg = 0  # Vergleichzähler
+    # Vergleichzähler
+    veggieverg = 0
+    sweetsverg = 0
+    alcoholverg = 0
 
-    anzahlhabits = 0 #wie viel Mal wurde getrackt
+    # wie viel Mal wurde getrackt
+    anzahlhabits = 0
 
+
+    wahlmonat = request.form.get("wahlmonat") #Monat aus Formular Statistik (muss nicht gespeichert werden)
+
+    #insgesamt im Monat
     monatworkoutgesamt = 0
 
-
     for key, alles in datenhabits.items():
-        monat = key.split(".")[1]
-        if monat == "01":
+        monat = key.split(".")[1] #splittet nach Monat eingegeben in dict
+        if wahlmonat == str(monat): #falls monat aus formular mit Monat aus dict übereinstimmt
             if alles["Sport"][0]["Workout"] != "":
-                monatworkoutgesamt = monatworkoutgesamt + int(alles["Sport"][0]["Workout"])
-
+                monatworkoutgesamt = monatworkoutgesamt + int(alles["Sport"][0]["Workout"]) #zusammenrechnen
         if alles["Sport"][0]["Workout"] != "":
-            workoutgesamt= workoutgesamt + int(alles["Sport"][0]["Workout"])
+            workoutgesamt = workoutgesamt + int(alles["Sport"][0]["Workout"])
         if alles["Sport"][0]["Walk"] != "":
             walkgesamt= walkgesamt + int(alles["Sport"][0]["Walk"])
         if alles["Sport"][0]["Stretching"] != "":
@@ -128,6 +134,7 @@ def statistik():
                            bedgesamt=bedgesamt, veggiegesamt=veggiegesamt,sweetsgesamt=sweetsgesamt,
                            alcoholgesamt=alcoholgesamt, vergvegsweet=vergvegsweet, vergvegalc=vergvegalc, vergalcsweet=vergalcsweet,
                            anzahlhabits=anzahlhabits, monatworkoutgesamt=monatworkoutgesamt)
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
 

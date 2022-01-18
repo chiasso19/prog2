@@ -19,7 +19,6 @@ def habit_speichern(datum, dicthabits):
     speichern(datei_name, datum, dicthabits)
     return datum, dicthabits
 
-
 def habits_laden():
     datei_name = "habits.json"
 
@@ -30,3 +29,4 @@ def habits_laden():
         datei_inhalt = {}
 
     return datei_inhalt
+
