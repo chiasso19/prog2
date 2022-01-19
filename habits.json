@@ -343,5 +343,28 @@
         "Alcohol": "viel"
       }
     ]
+  },
+  "01.02.2022": {
+    "Sport": [
+      {
+        "Workout": "40",
+        "Walk": "40",
+        "Stretching": "20"
+      }
+    ],
+    "Haushalt": [
+      {
+        "Vacuum": "on",
+        "Tidy": "on",
+        "Bed": "on"
+      }
+    ],
+    "Nahrung": [
+      {
+        "Veggies": "wenig",
+        "Sweets": "wenig",
+        "Alcohol": "wenig"
+      }
+    ]
   }
 }

@@ -4,17 +4,17 @@
 
 <div class="container"><br>
   <h1 >So sieht deine bisherige Statisktik aus!</h1>
-  <p>Du hast deine Habits {{anzahlhabits}}x mal getrackt.</p>
+  <p>Du hast deine Habits {{anzahlhabits}}x getrackt.</p>
     <h3>Insgesamt:</h3>
     <p>Du hast {{workoutgesamt}} Minuten Workout gemacht.</p>
-    <p>Du bist {{walkgesamt}} Minuten glaufen.</p>
+    <p>Du bist {{walkgesamt}} Minuten gelaufen.</p>
     <p>Du hast {{stretchinggesamt}} Minuten Stretching gemacht.</p>
-    <p>Du hast {{vacuumgesamt}} Mal gestaubsaugt.</p>
-    <p>Du hast {{tidygesamt}} Mal aufgeräumt.</p>
-    <p>Du hast {{bedgesamt}} Mal dein Bett gemacht.</p>
-    <p>Du hast {{veggiegesamt}} Mal Gemüse gegessen.</p>
-    <p>Du hast {{sweetsgesamt}} Mal Süsses gegessen.</p>
-    <p>Du hast {{alcoholgesamt}} Mal Alkohol getrunken.</p><br>
+    <p>Du hast {{vacuumgesamt}}x gestaubsaugt.</p>
+    <p>Du hast {{tidygesamt}}x aufgeräumt.</p>
+    <p>Du hast {{bedgesamt}}x dein Bett gemacht.</p>
+    <p>Du hast {{veggiegesamt}}x Gemüse gegessen.</p>
+    <p>Du hast {{sweetsgesamt}}x Süsses gegessen.</p>
+    <p>Du hast {{alcoholgesamt}}x Alkohol getrunken.</p><br>
     <h4>Im Monat:</h4>
     <form action="{{url_for('statistik')}}" method="POST">
         <div>
@@ -22,7 +22,15 @@
             <input type="text" class="form-control, m-2" name="wahlmonat" id="wahlmonat" placeholder="z.B. 01 für Januar">
         </div><button type="submit" class="btn btn-success">Anwenden</button>
     </form><br>
-    <p> Du hast diesen Monat {{monatworkoutgesamt}} Minuten Workout gemacht.</p>
+    <p>Du hast diesen Monat {{monatworkoutgesamt}} Minuten Workout gemacht.</p>
+    <p>Du bist in diesen Monat {{monatwalkgesamt}} Minuten gelaufen.</p>
+    <p>Du hast diesen Monat {{monatstretchinggesamt}} Minuten Stretching gemacht.</p>
+    <p>Du hast diesen Monat {{monatvacuumgesamt}}x gestaubsaugt.</p>
+    <p>Du hast diesen Monat {{monattidygesamt}}x aufgeräumt.</p>
+    <p>Du hast diesen Monat {{monatbedgesamt}}x dein Bett gemacht.</p>
+    <p>Du hast diesen Monat {{monatveggiegesamt}}x Gemüse gegessen.</p>
+    <p>Du hast diesen Monat {{monatsweetsgesamt}}x Süsses gegessen.</p>
+    <p>Du hast diesen Monat {{monatalcoholgesamt}}x Alkohol getrunken.</p><br>
 
     <h4 >Vergleiche:</h4>
     <p>Du hast {{"%.2f"|format(vergvegsweet)}}x mehr Gemüse gegessen als Süsses.</p>

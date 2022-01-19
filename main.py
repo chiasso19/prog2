@@ -61,12 +61,12 @@ def statistik():
     sweetsgesamt = 0
     alcoholgesamt = 0
 
-    # Vergleichzähler
+    #Vergleichzähler
     veggieverg = 0
     sweetsverg = 0
     alcoholverg = 0
 
-    # wie viel Mal wurde getrackt
+    #wie viel Mal wurde getrackt
     anzahlhabits = 0
 
 
@@ -74,12 +74,37 @@ def statistik():
 
     #insgesamt im Monat
     monatworkoutgesamt = 0
+    monatwalkgesamt = 0
+    monatstretchinggesamt = 0
+    monatveggiegesamt = 0
+    monatsweetsgesamt = 0
+    monatalcoholgesamt = 0
+    monatvacuumgesamt = 0
+    monattidygesamt = 0
+    monatbedgesamt = 0
 
     for key, alles in datenhabits.items():
         monat = key.split(".")[1] #splittet nach Monat eingegeben in dict
         if wahlmonat == str(monat): #falls monat aus formular mit Monat aus dict übereinstimmt
             if alles["Sport"][0]["Workout"] != "":
-                monatworkoutgesamt = monatworkoutgesamt + int(alles["Sport"][0]["Workout"]) #zusammenrechnen
+                monatworkoutgesamt = monatworkoutgesamt + int(alles["Sport"][0]["Workout"])
+            if alles["Sport"][0]["Walk"] != "":
+                monatwalkgesamt =monatwalkgesamt + int(alles["Sport"][0]["Walk"])
+            if alles["Sport"][0]["Stretching"] != "":
+                monatstretchinggesamt = monatstretchinggesamt + int(alles["Sport"][0]["Stretching"])
+            if alles["Haushalt"][0]["Vacuum"]:
+                monatvacuumgesamt = monatvacuumgesamt + 1
+            if alles["Haushalt"][0]["Tidy"]:
+                monattidygesamt = monattidygesamt + 1
+            if alles["Haushalt"][0]["Bed"]:
+                monatbedgesamt = monatbedgesamt + 1
+            if alles["Nahrung"][0]["Veggies"]:
+                monatveggiegesamt = monatveggiegesamt + 1
+            if alles["Nahrung"][0]["Sweets"]:
+                monatsweetsgesamt = monatsweetsgesamt + 1
+            if alles["Nahrung"][0]["Alcohol"]:
+                monatalcoholgesamt = monatalcoholgesamt + 1
+
         if alles["Sport"][0]["Workout"] != "":
             workoutgesamt = workoutgesamt + int(alles["Sport"][0]["Workout"])
         if alles["Sport"][0]["Walk"] != "":
@@ -133,7 +158,10 @@ def statistik():
                            stretchinggesamt=stretchinggesamt, vacuumgesamt=vacuumgesamt,tidygesamt=tidygesamt,
                            bedgesamt=bedgesamt, veggiegesamt=veggiegesamt,sweetsgesamt=sweetsgesamt,
                            alcoholgesamt=alcoholgesamt, vergvegsweet=vergvegsweet, vergvegalc=vergvegalc, vergalcsweet=vergalcsweet,
-                           anzahlhabits=anzahlhabits, monatworkoutgesamt=monatworkoutgesamt)
+                           anzahlhabits=anzahlhabits, monatworkoutgesamt=monatworkoutgesamt,
+                           monatwalkgesamt=monatwalkgesamt,monatstretchinggesamt=monatstretchinggesamt, monatvacuumgesamt=monatvacuumgesamt,
+                           monattidygesamt=monattidygesamt, monatbedgesamt=monatbedgesamt, monatveggiegesamt=monatveggiegesamt,
+                           monatsweetsgesamt=monatsweetsgesamt, monatalcoholgesamt=monatalcoholgesamt)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
