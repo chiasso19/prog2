@@ -1,12 +1,18 @@
 from flask import Flask, request, render_template
 import daten
 
+""""
+Quellen Allgemein:
+Unterrricht, Unterlagen und Tutoring Odoni
+Youtube-Playlist: https://www.youtube.com/watch?v=2e4STDACVA8&list=PLCC34OHNcOtqJBOLjXTd5xC0e-VD3siPn
+"""
+
 app = Flask(__name__)
 
 @app.route("/", methods=["POST", "GET"])
 def index():
     if request.method == "POST":
-        workout = request.form.get("workout")
+        workout = request.form.get("workout") #holt Daten aus html
         walk = request.form.get("walk")
         stretching = request.form.get("stretching")
 
@@ -21,7 +27,7 @@ def index():
         datum = request.form.get("datum")
 
 
-        dicthabits = {
+        dicthabits = { #nimmt Daten aus request.form.get
             "Sport": [
                 {
                     "Workout": workout,
@@ -41,9 +47,9 @@ def index():
                     "Alcohol": alcohol
                  }]
         }
-        daten.habit_speichern(datum, dicthabits)
+        daten.habit_speichern(datum, dicthabits) #speichert Daten via daten.py
 
-    return render_template('index.html')
+    return render_template('index.html') #soll Webseite widergeben
 
 
 @app.route("/statistik", methods=["POST", "GET"])
@@ -85,15 +91,15 @@ def statistik():
 
     for key, alles in datenhabits.items():
         monat = key.split(".")[1] #splittet nach Monat eingegeben in dict
-        if wahlmonat == str(monat): #falls monat aus formular mit Monat aus dict übereinstimmt
-            if alles["Sport"][0]["Workout"] != "":
+        if wahlmonat == str(monat): #falls monat aus formular mit Monat aus dict übereinstimmt...
+            if alles["Sport"][0]["Workout"] != "": #...dann angegebene Minuten zusammenrechnen
                 monatworkoutgesamt = monatworkoutgesamt + int(alles["Sport"][0]["Workout"])
             if alles["Sport"][0]["Walk"] != "":
                 monatwalkgesamt =monatwalkgesamt + int(alles["Sport"][0]["Walk"])
             if alles["Sport"][0]["Stretching"] != "":
                 monatstretchinggesamt = monatstretchinggesamt + int(alles["Sport"][0]["Stretching"])
             if alles["Haushalt"][0]["Vacuum"]:
-                monatvacuumgesamt = monatvacuumgesamt + 1
+                monatvacuumgesamt = monatvacuumgesamt + 1 #...dann rechnet es zusammen
             if alles["Haushalt"][0]["Tidy"]:
                 monattidygesamt = monattidygesamt + 1
             if alles["Haushalt"][0]["Bed"]:
@@ -105,7 +111,7 @@ def statistik():
             if alles["Nahrung"][0]["Alcohol"]:
                 monatalcoholgesamt = monatalcoholgesamt + 1
 
-        if alles["Sport"][0]["Workout"] != "":
+        if alles["Sport"][0]["Workout"] != "": #alles insgesamt rechnen(nicht nur Monat)
             workoutgesamt = workoutgesamt + int(alles["Sport"][0]["Workout"])
         if alles["Sport"][0]["Walk"] != "":
             walkgesamt= walkgesamt + int(alles["Sport"][0]["Walk"])
@@ -113,14 +119,14 @@ def statistik():
             stretchinggesamt= stretchinggesamt + int(alles["Sport"][0]["Stretching"])
 
         if alles["Haushalt"][0]["Vacuum"]:
-            vacuumgesamt = vacuumgesamt + 1
+            vacuumgesamt = vacuumgesamt + 1 #alles insgesamt rechnen
         if alles["Haushalt"][0]["Tidy"]:
             tidygesamt = tidygesamt + 1
         if alles["Haushalt"][0]["Bed"]:
             bedgesamt = bedgesamt + 1
 
         if alles["Nahrung"][0]["Veggies"]:
-            veggiegesamt = veggiegesamt + 1 #insgesamt
+            veggiegesamt = veggiegesamt + 1 #insgesamt zusammenrechnen
             if alles["Nahrung"][0]["Veggies"] == "viel":#Vergleiche
                 veggieverg = veggieverg + 6
             if alles["Nahrung"][0]["Veggies"] == "mittel":#Vergleiche
@@ -147,13 +153,14 @@ def statistik():
                 alcoholverg = alcoholverg + 1
 
         if alles != "":
-            anzahlhabits = anzahlhabits + 1
+            anzahlhabits = anzahlhabits + 1 #wie viele habits eingetragen wurden
 
+        #Berechnung Vergleiche
         vergvegsweet = veggieverg / sweetsverg
         vergvegalc = veggieverg / alcoholverg
         vergalcsweet = alcoholverg / sweetsverg
 
-
+    #Gibt Webseite wider und "übersetzt die Daten ins html wo sie dann angesprochen werden"
     return render_template('statistik.html', workoutgesamt=workoutgesamt, walkgesamt=walkgesamt,
                            stretchinggesamt=stretchinggesamt, vacuumgesamt=vacuumgesamt,tidygesamt=tidygesamt,
                            bedgesamt=bedgesamt, veggiegesamt=veggiegesamt,sweetsgesamt=sweetsgesamt,
