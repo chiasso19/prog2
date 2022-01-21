@@ -9,7 +9,9 @@ Ein Habit-Tracker kann helfen, die Übersicht der Ausführung zu behalten.
 <b>Anleitung</b><br>
 Die Gewohnheiten sind bereits fix hinterlegt. Am Ende des Tages trage ich das heutige Datum ein und beginne mit dem Tracking.
 Wie viele Minuten habe ich Sport gemacht? Habe ich die Gewohnheiten unter der Kategorie "Haushalt" erledigt? Wie viel Gemüse/Früchte oder Süssigkeiten habe ich gegessen? Wie siehts mit Alkohol aus?
-Diese Daten speichere ich ab und kann sie unter dem Register "Statistik" ansehen. 
+Diese Daten speichere ich ab und kann sie unter dem Register "Statistik" ansehen.
+
+![diagramm_einfach](https://user-images.githubusercontent.com/83659272/150600230-d3360ed5-98e6-4077-a712-0aea8af638dd.png)
 
 <b>Speicherung</b><br>
 Folgende Daten werden abgespeichert:<br>
@@ -26,8 +28,4 @@ Veggies, Sweets, Alcohol (viel, mittel, wenig)<br>
 Im Register "Statistik" sieht man wie viel man die Gewohnheit insgesamt ausgeführt hat, aber auch wie viele Minuten (Sport). Zudem wurden im Bereich Nahrung Vergelcueh angestellt.
 Das Datum kann manuell eingegeben werden, falls man an einem Tag den Eintrag vergessen hat.
 
-<img src="img/diagramm_einfach.png">
-<img src="img/aktivitätsdiagramm_Schritte.png">
-
-
-
+![aktivitätsdiagramm_Schritte](https://user-images.githubusercontent.com/83659272/150600260-09aab4de-c9e5-4012-a9f6-b08a28247b4b.png)
